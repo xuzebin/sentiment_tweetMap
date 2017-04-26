@@ -32,7 +32,7 @@ class ElasticsearchWrapper:
             }
         }
         print (data)
-        response = requests.put(self.address, data=json.dumps(data))
+        response = requests.post(self.address, data=json.dumps(data))
         return response.text
 
     def upload(self, data):
@@ -96,6 +96,7 @@ class ElasticsearchWrapper:
         return response.json()
 
 
-# es = ElasticsearchWrapper()
+# es = ElasticsearchWrapper("../../setup.cfg")
 # res = es.create_index()
 # print res
+
